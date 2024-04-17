@@ -34,7 +34,7 @@ object mainTest20 extends App {
     return taille
   }
 
-  println(timed_sort(RandomArrayFactory.create(30000)).toInt)
+  println(timed_sort(RandomArrayFactory.create(40000)).toInt)
 
 
 var testValue : Int = dicho(1)
