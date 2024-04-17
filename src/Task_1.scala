@@ -5,7 +5,7 @@ trait ArrayFactory {
   def create(size: Int): Array[Int]
 }
 
-class RandomArrayFactory extends ArrayFactory {
+object RandomArrayFactory extends ArrayFactory {
   override def create(size: Int): Array[Int] = {
     var result: Array[Int] = new Array[Int](size)
     var value: Random = new Random(23)
@@ -16,7 +16,7 @@ class RandomArrayFactory extends ArrayFactory {
   }
 }
 
-class InvertedSortedArrayFactory extends ArrayFactory {
+object InvertedSortedArrayFactory extends ArrayFactory {
   override def create(size: Int): Array[Int] = {
     var result: Array[Int] = new Array[Int](size)
     var value: Int = size - 1
@@ -28,7 +28,7 @@ class InvertedSortedArrayFactory extends ArrayFactory {
   }
 }
 
-class ShuffleArrayFactory extends ArrayFactory {
+object ShuffleArrayFactory extends ArrayFactory {
   override def create(size: Int): Array[Int] = {
     var result: Array[Int] = new Array[Int](size)
     var valueDown: Int = size - 1
@@ -67,21 +67,3 @@ class AlmostSortedArrayFactory extends ArrayFactory {
 }
 
 
-object main extends App {
-  val test1 = new RandomArrayFactory
-  var test11: Array[Int] = test1.create(14)
-  println(test11.mkString(","))
-
-  val test3 = new InvertedSortedArrayFactory
-  var test31: Array[Int] = test3.create(14)
-  println(test31.mkString(","))
-
-  val test4 = new ShuffleArrayFactory
-  var test41: Array[Int] = test4.create(7)
-  println(test41.mkString(","))
-
-  val test5 = new AlmostSortedArrayFactory
-  var test51: Array[Int] = test5.create(7)
-  println(test51.mkString(","))
-
-}
