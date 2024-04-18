@@ -2,16 +2,16 @@ import java.io.{FileOutputStream, PrintWriter}
 
 object Test_sort extends App{
   def timed_sort(tab : Array[Int]) : Int = {
-    var time = System.nanoTime()
+    var time = System.currentTimeMillis()
     SelectionSort.sort(tab)
-    var end = System.nanoTime()
+    var end = System.currentTimeMillis()
     return (end-time).toInt
   }
 
   def timed_sort_Ysort(tab: Array[Int]): Int = {
-    var time = System.nanoTime()
+    var time = System.currentTimeMillis()
     YSort.sort(tab)
-    var end = System.nanoTime()
+    var end = System.currentTimeMillis()
     return (end - time).toInt
   }
 
@@ -30,8 +30,11 @@ object Test_sort extends App{
       var arr_invert : Array[Int] = InvertedSortedArrayFactory.create(taille)
       var arr_shuffle : Array[Int] = ShuffleArrayFactory.create(taille)
       res(count) = timed_sort(arr)
+      println(res(count))
       res_invert(count) = timed_sort(arr_invert)
+      println(res_invert(count))
       res_shuffle(count) = timed_sort(arr_shuffle)
+      println(res_shuffle(count))
       res_y(count) = timed_sort_Ysort(arr)
       res_y_invert(count) = timed_sort_Ysort(arr_invert)
       res_y_shuffle(count) = timed_sort_Ysort(arr_shuffle)
