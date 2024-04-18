@@ -5,7 +5,7 @@ object mainTest20 extends App {
   def dicho(quoi: Int): Int = {
 
     var temps: Double = 0
-    val tempsRef: Double = math.pow(10, 9)
+    val tempsRef: Double = math.pow(10, 3)
     var tailleMax: Int = 70000
     var tailleMin: Int = 0
     var taille: Int = (math.random() * tailleMax).toInt
@@ -15,7 +15,7 @@ object mainTest20 extends App {
       quoi match {
         case 1 => {
           arr = RandomArrayFactory.create(taille)
-          temps = timed_sort(arr).toInt
+          temps = timed_sort(arr)
         }
       }
 
@@ -34,12 +34,11 @@ object mainTest20 extends App {
     return taille
   }
 
-  println(timed_sort(RandomArrayFactory.create(40000)).toInt)
+  println(timed_sort(RandomArrayFactory.create(40000)))
 
 
 var testValue : Int = dicho(1)
 println(testValue)
 println(timed_sort(RandomArrayFactory.create(testValue)))
-
 
 }
